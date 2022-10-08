@@ -13,35 +13,29 @@ from time import sleep
 def scanCreateLife():
     # click options
     sleep(2)
-    moveToPosition(59, 962)
+    pyautogui.moveTo(59, 962)
     print("cursor moved to options")
     pyautogui.click()
     # click strange news
     sleep(1)
-    moveToPosition(246, 351)
+    pyautogui.moveTo(246, 351)
     print("cursor moved to strange news")
     pyautogui.click()
     # click create life
     sleep(1)
-    moveToPosition(851, 524)
+    pyautogui.moveTo(851, 524)
     print("cursor moved to create life")
     pyautogui.click()
     # scan once
     sleep(1)
-    moveToPosition(1312, 929)
+    pyautogui.moveTo(1312, 929)
     print("cursor moved to scan button")
     pyautogui.click()
     # scan cancel
     sleep(1)
-    moveToPosition(1713, 481)
+    pyautogui.moveTo(1713, 481)
     print("cursor moved to scan button")
     pyautogui.click()
-
-
-
-def moveToPosition(x, y):
-    pyautogui.moveTo(x, y)
-
 
 if __name__ == '__main__':
     scanCreateLife()
