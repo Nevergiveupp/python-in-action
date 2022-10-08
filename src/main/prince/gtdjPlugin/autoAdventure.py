@@ -27,7 +27,7 @@ def autoAdventure():
         pyautogui.click()
         sleep(2)
     # click go to
-    sleep(8)
+    sleep(6)
     pyautogui.moveTo(1154, 881, .5)
     pyautogui.click()
     # click battle
