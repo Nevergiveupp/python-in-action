@@ -10,22 +10,22 @@ from time import sleep
 def autoFantasy():
     # click options
     sleep(1)
-    pyautogui.moveTo(59, 962)
+    pyautogui.moveTo(59, 962, .5)
     print("cursor moved to options")
     pyautogui.click()
     # click fantasy
     sleep(1)
-    pyautogui.moveTo(241, 774)
+    pyautogui.moveTo(241, 774, .5)
     print("cursor moved to fantasy")
     pyautogui.click()
     # click random
     sleep(2)
-    pyautogui.moveTo(1135, 476)
+    pyautogui.moveTo(1135, 476, .5)
     print("cursor moved to random")
     pyautogui.click()
     # click auto
     sleep(1)
-    pyautogui.moveTo(1776, 637)
+    pyautogui.moveTo(1776, 637, .5)
     print("cursor moved to auto")
     pyautogui.click()
     # battle
