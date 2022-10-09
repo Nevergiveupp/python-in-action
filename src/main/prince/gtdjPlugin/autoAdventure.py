@@ -12,6 +12,7 @@ from time import sleep
 
 
 def autoAdventure():
+    sleep(2)
     # click start
     x=1824
     y=980
