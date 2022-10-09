@@ -9,7 +9,7 @@ from time import sleep
 
 def autoFantasy():
     # click options
-    sleep(1)
+    sleep(2)
     pyautogui.moveTo(59, 962, .5)
     print("cursor moved to options")
     pyautogui.click()
