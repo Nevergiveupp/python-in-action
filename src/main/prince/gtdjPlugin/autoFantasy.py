@@ -40,8 +40,8 @@ def battle():
     pyautogui.click()
     print("click battle")
     # click jump over
-    sleep(5)
-    pyautogui.moveTo(1816, 946, .5)
+    sleep(12)
+    pyautogui.move(0, 45, .5)
     pyautogui.click()
     print("click jump over")
     # click submit
