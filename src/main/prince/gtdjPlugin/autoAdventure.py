@@ -44,8 +44,8 @@ def autoAdventure():
     pyautogui.click()
     print("click auto")
     # click jump over
-    sleep(1)
-    pyautogui.moveTo(1816, 946, .5)
+    sleep(0.2)
+    pyautogui.moveTo(1816, 946)
     pyautogui.click()
     print("click jump over")
     # click submit
