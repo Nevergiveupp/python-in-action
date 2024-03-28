@@ -1,8 +1,7 @@
 import json
 import os
 
-# file_path = 'C:/Working/gitlab_repo/sims-selfservice-3-ui/src/assets/i18n-password/bg.json'
-folder_path = 'C:/Working/gitlab_repo/sims-selfservice-3-ui/src/assets/i18n-password'
+folder_path = 'C:/MyProjects/gitlab_repo/sims-selfservice-3-ui/src/assets/i18n-password'
 
 
 # read json file from folder
@@ -34,10 +33,11 @@ if __name__ == '__main__':
             if file.endswith(".json") and file != 'en.json':
                 # retrieve json data from the file
                 data = readJsonFile(folder_path + '/' + file)
-                print(data)
+                print("before: " + str(data))
                 # delete key value pair which contains the keyword
                 deleteRowsContainsKey(data, 'E-100')
-                print(data)
+                print("after: " + str(data))
                 # write the json data back to file
                 writeJsonFile(data, folder_path + '/' + file)
                 print("filename: " + file + " write success")
+    print("all files have been processed successfully!")

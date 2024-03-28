@@ -86,7 +86,7 @@ def batch_rename_files_sarba(filepath):
 
 
 if __name__ == '__main__':
-    path = r'C:\Working\Demand\Add_translation\4.10.0.RC3\sarba\Authentication Service e-mails'  # the path of the files
+    path = r'C:\Working\Demand\Add_translation\test\ui'  # the path of the files
     if path.find('ui') != -1:  # if path contains string 'ui', invoke batch_rename_files_ui()
         batch_rename_files_ui()
     elif path.find('rest') != -1:  # if path contains string 'rest', invoke batch_rename_files_rest()
