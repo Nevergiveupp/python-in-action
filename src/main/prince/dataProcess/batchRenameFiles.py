@@ -90,7 +90,8 @@ def batch_rename_files_core(filepath):
         for filename in filenames:  # traverse all files in the path
             if filename.endswith('.properties'):  # when the filename ends with .properties
                 if 'zh' in filename:  # if the filename contains 'zh'
-                    new_name = filename.replace("-", "_")  # special case for zh files
+                    parts = filename.split('-') # split the filename by '-'
+                    new_name = parts[0] + '-' + '_'.join(parts[1:]) # join the parts with '_'
                 else:
                     name, ext = os.path.splitext(filename)  # split the filename by '.'
                     new_name = name[:-3] + ext  # remove the last 3 characters of the filename
