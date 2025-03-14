@@ -84,13 +84,34 @@ def batch_rename_files_sarba(filepath):
             os.rename(os.path.join(foldName, filename), os.path.join(foldName, new_name))  # rename the file
             print(filename, "has been renamed successfully! New name is: ", new_name)  # print the result
 
+def batch_rename_files_core(filepath):
+    new_name = ''
+    for foldName, subfolders, filenames in os.walk(path):  # os.walk() get folderName, subfolders, filenames in the path
+        for filename in filenames:  # traverse all files in the path
+            if filename.endswith('.properties'):  # when the filename ends with .properties
+                if 'zh' in filename:  # if the filename contains 'zh'
+                    new_name = filename.replace("-", "_")  # special case for zh files
+                else:
+                    name, ext = os.path.splitext(filename)  # split the filename by '.'
+                    new_name = name[:-3] + ext  # remove the last 3 characters of the filename
+            else:
+                continue  # skip other files
+            os.rename(os.path.join(foldName, filename), os.path.join(foldName, new_name))  # rename the file
+            print(filename, "has been renamed successfully! New name is: ", new_name)  # print the result
+
 
 if __name__ == '__main__':
-    path = r'C:\Working\Demand\Add_translation\test\ui'  # the path of the files
+    path = r'C:\Working\Demand\Add_translation\5.2.0.RC3\core'  # the path of the files
     if path.find('ui') != -1:  # if path contains string 'ui', invoke batch_rename_files_ui()
+        print("rename language artifacts in Self Service UI...")
         batch_rename_files_ui()
     elif path.find('rest') != -1:  # if path contains string 'rest', invoke batch_rename_files_rest()
+        print("rename language artifacts in Self Service Rest...")
         batch_rename_files_rest(path)
     elif path.find('sarba') != -1:  # if path contains string 'sarba', invoke batch_rename_files_sarba()
+        print("rename language artifacts in Auth Service...")
         batch_rename_files_sarba(path)
+    elif path.find('core') != -1:  # if path contains string 'core', invoke batch_rename_files_core()
+        print("rename language artifacts in Core...")
+        batch_rename_files_core(path)
     print("All files have been renamed successfully!")
